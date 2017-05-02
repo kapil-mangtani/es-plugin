@@ -13,7 +13,7 @@ The new HTML5 [Web Component Specification](https://www.webcomponents.org/introd
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install es-plugin --save
+$ bower install kapil-mangtani/es-plugin --save
 ```
 
 
