@@ -1,3 +1,19 @@
+<template>
+    <style></style>
+    <select id="select"> 
+      <option value="value1">GET</option> 
+      <option value="value2" selected>POST</option>
+      <option value="value3">PUT</option>
+      <option value="value3">DELETE</option>
+    </select>
+    <textarea rows="10" cols="50" placeholder="Enter query JSON here..."></textarea>
+    <button type="button">RUN</button> 
+    <section role="tabpanel">
+        <content></content>
+    </section>
+</template>
+
+
 <script>
 // es-plugin register
 (function() {
@@ -11,13 +27,14 @@
           <option value="value3">PUT</option>
           <option value="value3">DELETE</option>
         </select>
-        <textarea rows="10" cols="50" placeholder="Enter query JSON here...">
-        </textarea>
+        <textarea rows="10" cols="50" placeholder="Enter query JSON here..."></textarea>
         <button type="button">RUN</button> 
         <section role="tabpanel">
             <content></content>
         </section>
 	`;
+    // Grab our template full of slider markup and styles
+    let tmpl = document.querySelector('template');
   
     // Create a HTML Element
     let ESPluginProto = Object.create(HTMLElement.prototype);
@@ -26,7 +43,8 @@
     ESPluginProto.createdCallback = function() {
         // Create a new Shadow Root and insert into our element
         let root = this.createShadowRoot();
-        root.innerHTML = template;
+        // root.innerHTML = template;
+        root.appendChild(document.importNode(tmpl.content, true));
     };
 
     // Fires when an instance was inserted into the document
