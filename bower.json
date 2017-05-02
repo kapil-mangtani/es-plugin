@@ -1,0 +1,25 @@
+{
+  "name": "es-plugin",
+  "version": "0.0.0",
+  "description": "My awesome Custom Element",
+  "main": "es-plugin.html",
+  "keywords": [
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.24",
+    "es-plugin": "kapil-mangtani/es-plugin"
+  },
+  "authors": [
+    "Kapil Mangtani <kapil.mangtani@beehyv.com>"
+  ],
+  "license": "MIT",
+  "homepage": ""
+}
