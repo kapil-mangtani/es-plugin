@@ -1,0 +1,45 @@
+<script>
+// es-plugin register
+(function() {
+    'use strict';
+    // Using a inline template instead of a template tag for brevity
+	let template = `
+        <style></style>
+        <select id="select"> 
+          <option value="value1">GET</option> 
+          <option value="value2" selected>POST</option>
+          <option value="value3">PUT</option>
+          <option value="value3">DELETE</option>
+        </select>
+        <textarea rows="10" cols="50" placeholder="Enter query JSON here...">
+        </textarea>
+        <button type="button">RUN</button> 
+        <section role="tabpanel">
+            <content></content>
+        </section>
+	`;
+  
+    // Create a HTML Element
+    let ESPluginProto = Object.create(HTMLElement.prototype);
+         
+    // Created Callback is called whenever a new element is created
+    ESPluginProto.createdCallback = function() {
+        // Create a new Shadow Root and insert into our element
+        let root = this.createShadowRoot();
+        root.innerHTML = template;
+    };
+
+    // Fires when an instance was inserted into the document
+    ESPluginProto.attachedCallback = function() {};
+    // Fires when an instance was removed from the document
+    ESPluginProto.detachedCallback = function() {};
+    // Fires when an attribute was added, removed, or updated
+    ESPluginProto.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+         
+    // Register our new element
+    document.registerElement('es-plugin', {
+        prototype: ESPluginProto
+    });
+}());
+</script>
